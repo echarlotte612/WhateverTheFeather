@@ -1,0 +1,33 @@
+<div class="weather-search">
+   <h1>Weather Request</h1>
+   <div class="weather-form">
+      <form action="/weather" method="POST">
+         <label for="city">City: </label>
+         <input type="text" name="location">
+         <label for="code">Country Code: </label>
+         <input type="text" name="countryCode"> 
+         <label for="sunriseCheck">Sunrise</label>
+         <input type="checkbox" name="sunriseCheck">
+         <label for="sunsetCheck">Sunset</label>
+         <input type="checkbox" name="sunsetCheck">
+         <input type="submit" class="btn-style" value="submit">
+         
+      </form>
+      </br>
+   </div>
+   <div class="weather-output">
+      {{#if err}}
+         <h2>{{err}}</h2>
+      {{/if}}
+      {{#if listExists}}
+         <h2>Today's weather in {{name}}:</h2>
+         <ul>
+            {{#each data}}
+            <li>{{@key}} : {{this}}</li>
+            {{/each}}
+         </ul>
+      {{/if}}
+   </div>
+</div>
+
+{{log data}}
