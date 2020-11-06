@@ -1,0 +1,10 @@
+<div class="app">
+   <h1>Today's weather in {{name}}:</br> {{data.temp}}&deg;C</h1>
+   <ul>
+      {{#each data}}
+         <li>{{@key}} : {{this}}</li>
+      {{/each}}
+   </ul>
+   </br>
+   <a class="btn-style" href="/weather">What's the weather?</a>
+</div>
