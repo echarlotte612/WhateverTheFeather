@@ -28,6 +28,7 @@ router.post('/', async(req, res) => {
       context.sunset = data.sys.sunset;
    };
    let name = data.name;
+   let icon = data.weather[0].icon;
    let description = data.weather[0].description;
    let feels_like = data.main.feels_like;
    let sunrise = data.sys.sunrise;
