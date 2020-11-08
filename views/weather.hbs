@@ -1,33 +1,33 @@
 <div class="weather-search">
-   <h1>Weather Request</h1>
-   <div class="weather-form">
-      <form action="/weather" method="POST">
-         <label for="city">City: </label>
-         <input type="text" name="location">
-         <label for="code">Country Code: </label>
-         <input type="text" name="countryCode"> 
-         <label for="sunriseCheck">Sunrise</label>
-         <input type="checkbox" name="sunriseCheck">
-         <label for="sunsetCheck">Sunset</label>
-         <input type="checkbox" name="sunsetCheck">
-         <input type="submit" class="btn-style" value="submit">
-         
-      </form>
-      </br>
-   </div>
-   <div class="weather-output">
-      {{#if err}}
-         <h2>{{err}}</h2>
-      {{/if}}
-      {{#if listExists}}
-         <h2>Today's weather in {{name}}:</h2>
-         <ul>
-            {{#each data}}
-            <li>{{@key}} : {{this}}</li>
-            {{/each}}
-         </ul>
-      {{/if}}
-   </div>
+   <h1>Weather Search</h1>
+
+   <form action="/" method="POST">
+      <label for="location" id="pac-input">Location: </label>
+      <input type="text" name="location">
+      <label for ="country">Country: </label>
+      <input type="text" name="country">
+      <input type="submit" value="submit">
+   </form>
 </div>
 
-{{log data}}
+{{#if err}}
+   <h2>{{err}}</h2>
+{{/if}}
+
+{{#if listExists}}
+<div class="weather-widget">
+   <div class="date-time">
+      <h3 id="date">{{date}}</h3>
+      <h3 id="time">{{time}}</h3>
+   </div>
+   <div class="location-main">
+      <i class="fa  fa-map-pin" style="font-size: 3em"></i>
+      <button type="submit" id="location-button">{{name}}, {{country}}</button>
+   </div>
+   <div class="current-weather">
+      <img src="images/icon{{icon}}.png" alt="image">
+      <h2 id="temp">{{temp}}&deg;c </h2>
+      <h2 id="description">{{description}}</h2>
+   </div>
+</div> 
+{{/if}}

@@ -1,12 +1,15 @@
-<div class="app">
-   <h1>Today's weather in {{name}}:</br> {{data.temp}}&deg;C</h1>
-   <ul>
-      {{icon}}
-      {{#each data}}
-         <li>{{@key}} : {{this}}</li>
-      {{/each}}
-      <img src="{{data.icon}}">
-   </ul>
-   </br>
-   <a class="btn-style" href="/weather">What's the weather?</a>
+<div class="weather-widget">
+   <div class="date-time">
+      <h3 id="date">{{date}}</h3>
+      <h3 id="time">{{time}}</h3>
+   </div>
+   <div class="location-main">
+      {{!-- <i class="fa  fa-map-pin" style="font-size: 3em"></i> --}}
+      <button type="submit" id="location-button" onclick=window.location.href='/weather' >{{name}}, {{country}}</button>
+   </div>
+   <div class="current-weather">
+      <img src="images/icon{{icon}}.png" alt="image">
+      <h2 id="temp">{{temp}}&deg;c </h2>
+      <h2 id="description">{{description}}</h2>
+   </div>
 </div>

@@ -1,20 +1,23 @@
 {
-  "name": "simpleserver",
+  "name": "not",
   "version": "1.0.0",
+  "description": "1. npm init -y (creates package.json)\r 2. Add nodedemon to start in package.json (\"start\": \"nodemon index.js\")\r 3. Request the API - get the url and API key",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "node-fetch": "^2.6.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "",
-  "license": "ISC",
   "keywords": [],
-  "description": "",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "node-fetch": "^2.6.1",
-    "path": "^0.12.7"
-  }
+  "author": "",
+  "license": "ISC"
 }
