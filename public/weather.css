@@ -1,7 +1,53 @@
-
 .weather-search {
    margin: 0 auto;
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-wrap: wrap;
+   height: 50vh;
+   width: 40vw;
 }
+.weather-search form {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: baseline;
+   align-content: space-around;
+   height: 30vh;
+}
+/* .weather-search * {
+   border: solid grey;
+} */
+.weather-search h1 {
+   flex: 1 1 100%;
+   text-align: center;
+}
+.weather-search label {
+   border: none;
+   padding: 0.69vw;
+   background: rgb(15, 0, 15);
+   color: white;
+}
+.weather-search input {
+   border: none;
+   padding: 0.75vw;
+}
+.weather-search #input-country {
+   width: 4vw;
+}
+.weather-search #input-location {
+   flex: 1 1 80%
+}
+.weather-search #input-country {
+   flex: 1 1 80%
+}
+.weather-search #button-submit {
+   cursor: pointer;
+}
+
+
+
+/* <label for="location" id="label-location">Location: </label>
+<input type="text" id="input-location" name="location">
+<label for ="country" id="label-country">Country: </label>
+<input type="text" id="input-country" name="country">
+<input type="submit" id="button-submit"value="submit"> */

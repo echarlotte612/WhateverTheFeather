@@ -1,6 +1,15 @@
 /* INDEX */
+.main-body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   position: relative;
+}
 .weather-widget {
    display: flex;
+   position: absolute;
+   z-index: 2;
    justify-content: space-around;
    align-content: space-between;
    padding: 2%;
@@ -9,19 +18,21 @@
    height: 50vh;
    flex-wrap: wrap;
    overflow: hidden;
-   background: rgba(255,255,255,.85);
+   background: linear-gradient(45deg, rgb(255, 126, 126), rgb(118, 118, 255) );
+   background: whitesmoke;
    margin-top: 10vh;
-   box-shadow: 3px 3px rgba(255, 0, 0, 0.5), -1em 0 .4em rgba(0, 0, 255, 0.5);
+   box-shadow: 3px 3px rgba(255, 0, 0, 0.25), -1em 0 .4em rgba(0, 0, 255, 0.25);
 }
 
-.weather-widget * {
+.weather-widget *, .weather-widget2 * {
    /* border: dashed orange; */
    text-align: center;
    text-transform: capitalize;
+   /* background-image: url("/images/background.jpg"); */
 }
 
 .date-time {
-   background: rgba(0, 0, 0, 0.90);
+   background: rgb(15, 0, 15);
    flex-basis: 100%;
    padding: 0, 20%, 0, 20%;
    display: flex;
@@ -30,17 +41,13 @@
    color: white;
    height: 10vh;
    width: 10vw;
-   border-radius: 0.5em;
-   /* font-size: 2em; */
+   border-radius: 0.2em;
    font-size: calc(6px + 1vw);
 }
 #temp {
    font-size: 5rem;
-   padding: 5%;
-   /* margin: 5% 25% 5% 25%; */
-   /* background: rgba(0, 0, 0, .75); */
+   padding: 2%;
    border-radius: 0.5em;
-   /* color: White; */
    flex: 2 2 100%;
 }
 #description {
@@ -66,13 +73,14 @@
 .current-weather img {
    width: calc(10vw - 40px);
    height: auto;
-   /* height: 150px;
-   width: 150px; */
-   /* image-rendering: crisp-edges; */
    padding: 2%;
-   margin: 5% 0 0 0;
    background-color: rgba(0, 0, 255, 0.5);
    border-radius: 50%;
+   transition: 1s ease-in-out;
+}
+.current-weather img:hover{
+   transform: rotate3d(0, 1, 0, 180deg);
+   background-color: rgb(212, 0, 255);
 }
 .current-weather #description {
    font-size: 2em;
@@ -96,7 +104,7 @@
    border-radius: 1em;
    cursor: pointer;
    transition: 0.2s ease-out;
-   background: linear-gradient(to bottom,rgba(0, 0, 255, 0.5), white);
+   background: linear-gradient(to bottom,rgb(186, 179, 255), white);
 }
 #location-button:hover {
    background: rgba(0, 0, 255, 0.5);
@@ -108,3 +116,71 @@
    filter: invert(10%);
    transition: 0.1s;
 }
+
+/*SECOND SLIDECARD///////////////////////////////////////////////////////////////////////////////*/
+.cardSwitch {
+   background: white;
+   height: 50px;
+   width: 50px;
+   cursor: pointer;
+   clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%);
+}
+.cardSwitch:active {
+   background: rgba(0,0,0, .85);
+}
+.cardSwitch:active+.weather-widget{
+   z-index: 1;
+   background: grey;
+}
+.weather-widget2 {
+      display: flex;
+      justify-content: space-around;
+      align-content: space-between;
+      flex-wrap: wrap;
+   z-index: 1;
+   position: relative;
+   top: -2.3vh;
+   padding: 2%;
+   border-radius: 1em;
+   width: 50vw;
+   height: 50vh;
+   flex-wrap: wrap;
+   overflow: hidden;
+   background: whitesmoke;
+   margin-top: 10vh;
+   box-shadow: 3px 3px rgba(255, 0, 0, 0.15), -1em 0 .4em rgba(0, 0, 255, 0.15);
+}
+.card2-title {
+   flex: 1 1 100%;
+}
+.sunrise, .sunset {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 5%;
+   font-size: x-large;
+}
+.sunsetSunrise img {
+   width: calc(10vw - 40px);
+   height: auto;
+   margin-right: 2%;
+}
+.stats img {
+   width: calc(5vw - 20px);
+   height: auto;
+   background: rgba(255, 0, 0, 0.5);
+   padding: 10%;
+   border-radius: 50%;
+}
+.wind {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column-reverse;
+}
+
+
+
+
+
+
+
