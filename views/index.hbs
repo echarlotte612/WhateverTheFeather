@@ -1,15 +1,51 @@
-<div class="weather-widget">
+<span class="cardSwitch" title="Hold to view more details">+</span>
+<div class="weather-widget" id="weather-widget">
    <div class="date-time">
       <h3 id="date">{{date}}</h3>
       <h3 id="time">{{time}}</h3>
    </div>
    <div class="location-main">
       {{!-- <i class="fa  fa-map-pin" style="font-size: 3em"></i> --}}
-      <button type="submit" id="location-button" onclick=window.location.href='/weather' >{{name}}, {{country}}</button>
+      <button type="submit" id="location-button" onclick=window.location.href='/weather' title="Click to change location" >{{name}}, {{country}}</button>
    </div>
    <div class="current-weather">
-      <img src="images/icon{{icon}}.png" alt="image">
+      <img src="images/icon{{icon}}.png"
+         onerror="if (this.src != '/images/weather-icons/045-weather forecast.png') this.src = '/images/weather-icons/045-weather forecast.png';"
+         alt="image"
+         title="{{name}}'s current weather">
       <h2 id="temp">{{temp}}&deg;c </h2>
       <h2 id="description">{{description}}</h2>
    </div>
 </div>
+
+<div class="weather-widget2" id="weather-widget2">
+   <h1 class="card2-title">{{name}}, {{country}}</h1>
+   <div class="sunsetSunrise">
+      <div class="sunrise">
+         <img src="/images/weather-icons/048-sunrise.png" title="Sunrise">
+         {{sunrise}}
+      </div>
+      <div class="sunset">
+         <img src="/images/weather-icons/049-sunset.png" title="Sunset">
+         {{sunset}}
+      </div>
+   </div>
+   <div class="stats">
+      <div class="wind">
+         <h1>{{windSpeed}} mph</h1>
+         <h1>{{windDirection}} &deg;</h1>
+         <img src="/images/weather-icons/026-windsock.png" style="rotate:{{windDirection}}deg;" title="Wind Direction">
+      </div>
+      <div class="pressure">
+         <img src="/images/weather-icons/021-barometer.png" title="Pressure">
+         <h1>{{pressure}} mb</h1>
+      </div>
+      <div class="humidity">
+         <img src="/images/weather-icons/032-humidity.png" title="Humidity">
+         <h1>{{humidity}} %</h1>
+      </div>
+   </div>
+
+
+</div>
+

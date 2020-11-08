@@ -36,6 +36,12 @@ app.get('/', async(req, res) => {
    let country = data.sys.country;
    let description = data.weather[0].description;
    let time = new Date();
+   let sunrise = new Date(data.sys.sunrise * 1000);
+   let sunset = new Date(data.sys.sunset * 1000);
+   let windSpeed = data.wind.speed;
+   let windDirection = data.wind.deg;
+   let pressure = data.main.pressure;
+   let humidity = data.main.humidity;
    res.render('index', {
       name,
       temp,
@@ -43,7 +49,13 @@ app.get('/', async(req, res) => {
       description,
       icon,
       date: date.toDateString(),
-      time: time.toTimeString()
+      time: time.toTimeString(),
+      sunrise: sunrise.toTimeString(),
+      sunset: sunset.toTimeString(),
+      windSpeed,
+      windDirection,
+      pressure,
+      humidity
    })
 });
 
@@ -73,6 +85,12 @@ app.post('/', async(req, res) => {
    let country = data.sys.country;
    let description = data.weather[0].description;
    let time = new Date();
+   let sunrise = new Date(data.sys.sunrise * 1000);
+   let sunset = new Date(data.sys.sunset * 1000);
+   let windSpeed = data.wind.speed;
+   let windDirection = data.wind.deg;
+   let pressure = data.main.pressure;
+   let humidity = data.main.humidity;
    res.render('index', {
       name,
       temp,
@@ -81,7 +99,13 @@ app.post('/', async(req, res) => {
       icon,
       date: date.toDateString(),
       time: time.toTimeString(),
-      listExists: true
+      listExists: true,
+      sunrise: sunrise.toTimeString(),
+      sunset: sunset.toTimeString(),
+      windSpeed,
+      windDirection,
+      pressure,
+      humidity
    });
 
 
