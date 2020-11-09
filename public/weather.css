@@ -43,6 +43,11 @@
 .weather-search #button-submit {
    cursor: pointer;
 }
+.weather-search #button-submit:active {
+   transform: scale(0.95);
+   filter: invert(10%);
+   transition: 0.1s;
+}
 
 
 

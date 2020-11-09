@@ -76,7 +76,7 @@
    padding: 2%;
    background-color: rgba(0, 0, 255, 0.5);
    border-radius: 50%;
-   transition: 1s ease-in-out;
+   transition: 0.5s ease-in-out;
 }
 .current-weather img:hover{
    transform: rotate3d(0, 1, 0, 180deg);
@@ -146,7 +146,6 @@
    border-radius: 1em;
    width: 50vw;
    height: 50vh;
-   flex-wrap: wrap;
    overflow: hidden;
    background: whitesmoke;
    margin-top: 10vh;
@@ -154,6 +153,11 @@
 }
 .card2-title {
    flex: 1 1 100%;
+   height: 15%;
+}
+.stat-collation {  
+   display: flex;
+   justify-content: space-between;
 }
 .sunrise, .sunset {
    display: flex;
@@ -166,6 +170,10 @@
    display: flex;
    flex-direction: column;
    width: 60%;
+}
+.sunsetSunrise h1 {
+   width: 25vw;
+   text-align: left;
 }
 .sunsetSunrise img {
    width: calc(10vw - 40px);

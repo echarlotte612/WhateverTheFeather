@@ -20,29 +20,31 @@
 
 <div class="weather-widget2" id="weather-widget2">
    <h1 class="card2-title">{{name}}, {{country}}</h1>
-   <div class="sunsetSunrise">
-      <div class="sunrise">
-         <img src="/images/weather-icons/048-sunrise.png" title="Sunrise">
-         {{sunrise}}
+   <div class="stat-collation">
+      <div class="sunsetSunrise">
+         <div class="sunrise">
+            <img src="/images/weather-icons/048-sunrise.png" title="Sunrise">
+            <h1>{{sunrise}}</h1>
+         </div>
+         <div class="sunset">
+            <img src="/images/weather-icons/049-sunset.png" title="Sunset">
+            <h1>{{sunset}}</h1>
+         </div>
       </div>
-      <div class="sunset">
-         <img src="/images/weather-icons/049-sunset.png" title="Sunset">
-         {{sunset}}
-      </div>
-   </div>
-   <div class="stats">
-      <div class="wind">
-         <img src="/images/weather-icons/026-windsock.png" style="rotate:{{windDirection}}deg;" title="Wind Direction">
-         <h1>{{windDirection}} &deg;</h1>
-         <h1>{{windSpeed}} mph</h1>
-      </div>
-      <div class="pressure">
-         <img src="/images/weather-icons/021-barometer.png" title="Pressure">
-         <h1>{{pressure}} mb</h1>
-      </div>
-      <div class="humidity">
-         <img src="/images/weather-icons/032-humidity.png" title="Humidity">
-         <h1>{{humidity}} %</h1>
+      <div class="stats">
+         <div class="wind">
+            <img src="/images/weather-icons/026-windsock.png" style="rotate:{{windDirection}}deg;" title="Wind Direction">
+            <h1>{{windDirection}} &deg;</h1>
+            <h1>{{windSpeed}} mph</h1>
+         </div>
+         <div class="pressure">
+            <img src="/images/weather-icons/021-barometer.png" title="Pressure">
+            <h1>{{pressure}} mb</h1>
+         </div>
+         <div class="humidity">
+            <img src="/images/weather-icons/032-humidity.png" title="Humidity">
+            <h1>{{humidity}} %</h1>
+         </div>
       </div>
    </div>
 

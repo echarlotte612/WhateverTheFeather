@@ -31,16 +31,14 @@ app.get('/', async(req, res) => {
    let data = await getWeather("Manchester", "uk");
    let name = data.name;
    let temp = Math.round(data.main.temp);
-
    let date = new Date();
    let date2 = date.getHours() + " : " + date.getMinutes();
-
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
-   let time = new Date();
-   let sunrise = new Date(data.sys.sunrise * 1000);
-   let sunset = new Date(data.sys.sunset * 1000);
+   // let time = new Date();
+   let sunrise = new Date(data.sys.sunrise*1000).getHours()+" : "+ new Date(data.sys.sunrise*100).getMinutes();
+   let sunset = new Date(data.sys.sunset * 1000).getHours()+" : "+ new Date(data.sys.sunset*100).getMinutes();
    let windSpeed = data.wind.speed;
    let windDirection = data.wind.deg;
    let pressure = data.main.pressure;
@@ -52,10 +50,10 @@ app.get('/', async(req, res) => {
       description,
       icon,
       date: date.toDateString(),
-      time: time.toTimeString(),
+      // time: time.toTimeString(),
       date2,
-      sunrise: sunrise.toTimeString(),
-      sunset: sunset.toTimeString(),
+      sunrise,
+      sunset,
       windSpeed,
       windDirection,
       pressure,
@@ -85,16 +83,14 @@ app.post('/', async(req, res) => {
    };
    let name = data.name;
    let temp = Math.round(data.main.temp);
-   
    let date = new Date();
    let date2 =  date.getHours() +" : "+ date.getMinutes();
-
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
-   let time = new Date();
-   let sunrise = new Date(data.sys.sunrise * 1000);
-   let sunset = new Date(data.sys.sunset * 1000);
+   // let time = new Date();
+   let sunrise = new Date(data.sys.sunrise*1000).getHours()+" : "+ new Date(data.sys.sunrise*100).getMinutes();
+   let sunset = new Date(data.sys.sunset * 1000).getHours()+" : "+ new Date(data.sys.sunset*100).getMinutes();
    let windSpeed = data.wind.speed;
    let windDirection = data.wind.deg;
    let pressure = data.main.pressure;
@@ -106,11 +102,11 @@ app.post('/', async(req, res) => {
       description,
       icon,
       date: date.toDateString(),
-      time: time.toTimeString(),
+      // time: time.toTimeString(),
       date2,
       listExists: true,
-      sunrise: sunrise.toTimeString(),
-      sunset: sunset.toTimeString(),
+      sunrise,
+      sunset,
       windSpeed,
       windDirection,
       pressure,
