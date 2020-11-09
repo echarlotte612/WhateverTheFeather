@@ -31,7 +31,10 @@ app.get('/', async(req, res) => {
    let data = await getWeather("Manchester", "uk");
    let name = data.name;
    let temp = Math.round(data.main.temp);
+
    let date = new Date();
+   let date2 = date.getHours() + " : " + date.getMinutes();
+
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
@@ -50,6 +53,7 @@ app.get('/', async(req, res) => {
       icon,
       date: date.toDateString(),
       time: time.toTimeString(),
+      date2,
       sunrise: sunrise.toTimeString(),
       sunset: sunset.toTimeString(),
       windSpeed,
@@ -81,7 +85,10 @@ app.post('/', async(req, res) => {
    };
    let name = data.name;
    let temp = Math.round(data.main.temp);
+   
    let date = new Date();
+   let date2 =  date.getHours() +" : "+ date.getMinutes();
+
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
@@ -100,6 +107,7 @@ app.post('/', async(req, res) => {
       icon,
       date: date.toDateString(),
       time: time.toTimeString(),
+      date2,
       listExists: true,
       sunrise: sunrise.toTimeString(),
       sunset: sunset.toTimeString(),
