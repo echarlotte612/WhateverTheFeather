@@ -127,15 +127,17 @@
 }
 .cardSwitch:active {
    background: rgba(0,0,0, .85);
+   clip-path: polygon(100% 30%, 100% 70%, 0 70%, 0 30%);
 }
 .cardSwitch:active+.weather-widget{
    z-index: 1;
    background: grey;
 }
+
 .weather-widget2 {
       display: flex;
       justify-content: space-around;
-      align-content: space-between;
+      align-content: center;
       flex-wrap: wrap;
    z-index: 1;
    position: relative;
@@ -160,6 +162,11 @@
    margin-top: 5%;
    font-size: x-large;
 }
+.sunsetSunrise {
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+}
 .sunsetSunrise img {
    width: calc(10vw - 40px);
    height: auto;
@@ -172,10 +179,11 @@
    padding: 10%;
    border-radius: 50%;
 }
-.wind {
+.wind, .pressure, .humidity {
    display: flex;
    flex-wrap: wrap;
-   flex-direction: column-reverse;
+   flex-direction: column;
+   font-size: x-small;
 }
 
 
