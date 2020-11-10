@@ -32,13 +32,13 @@ app.get('/', async(req, res) => {
    let name = data.name;
    let temp = Math.round(data.main.temp);
    let date = new Date();
-   let date2 = date.getHours() + " : " + date.getMinutes();
+   let date2 = new Date();
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
    // let time = new Date();
-   let sunrise = new Date(data.sys.sunrise*1000).getHours()+" : "+ new Date(data.sys.sunrise*100).getMinutes();
-   let sunset = new Date(data.sys.sunset * 1000).getHours()+" : "+ new Date(data.sys.sunset*100).getMinutes();
+   let sunrise = new Date(data.sys.sunrise*1000);
+   let sunset = new Date(data.sys.sunset*1000);
    let windSpeed = data.wind.speed;
    let windDirection = data.wind.deg;
    let pressure = data.main.pressure;
@@ -51,9 +51,9 @@ app.get('/', async(req, res) => {
       icon,
       date: date.toDateString(),
       // time: time.toTimeString(),
-      date2,
-      sunrise,
-      sunset,
+      date2: date2.toTimeString().substr(0,5),
+      sunrise: sunrise.toTimeString().substr(0,5),
+      sunset: sunset.toTimeString().substr(0,5),
       windSpeed,
       windDirection,
       pressure,
@@ -84,13 +84,13 @@ app.post('/', async(req, res) => {
    let name = data.name;
    let temp = Math.round(data.main.temp);
    let date = new Date();
-   let date2 =  date.getHours() +" : "+ date.getMinutes();
+   let date2 =  new Date();
    let icon = data.weather[0].icon;
    let country = data.sys.country;
    let description = data.weather[0].description;
    // let time = new Date();
-   let sunrise = new Date(data.sys.sunrise*1000).getHours()+" : "+ new Date(data.sys.sunrise*100).getMinutes();
-   let sunset = new Date(data.sys.sunset * 1000).getHours()+" : "+ new Date(data.sys.sunset*100).getMinutes();
+   let sunrise = new Date(data.sys.sunrise*1000);
+   let sunset = new Date(data.sys.sunset * 1000);
    let windSpeed = data.wind.speed;
    let windDirection = data.wind.deg;
    let pressure = data.main.pressure;
@@ -103,10 +103,10 @@ app.post('/', async(req, res) => {
       icon,
       date: date.toDateString(),
       // time: time.toTimeString(),
-      date2,
+      date2: date2.toTimeString().substr(0,5),
       listExists: true,
-      sunrise,
-      sunset,
+      sunrise: sunrise.toTimeString().substr(0,5),
+      sunset: sunset.toTimeString().substr(0,5),
       windSpeed,
       windDirection,
       pressure,
